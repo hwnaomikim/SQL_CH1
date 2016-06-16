@@ -1,0 +1,12 @@
+Use DB_name;
+
+#Load Data/format_txt
+LOAD DATA LOCAL INFILE 'worldcitiespop.txt' INTO TABLE cities
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(country, city_ascii, city, region, population, latitude, longitude);
+
+#If following error occurs,
+ERROR 1148 (42000): The used command is not allowed with this MySQL version
